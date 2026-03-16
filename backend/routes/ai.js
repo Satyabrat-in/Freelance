@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const { generateProposal, getRateAdvice, generateJobPost, chatWithAssistant, analyseProposal } = require('../controllers/ai');
+const { protect } = require('../middleware/auth');
+router.post('/proposal', protect, generateProposal);
+router.post('/rate-advice', protect, getRateAdvice);
+router.post('/job-post', protect, generateJobPost);
+router.post('/chat', protect, chatWithAssistant);
+router.post('/analyse-proposal', protect, analyseProposal);
+module.exports = router;

@@ -1,0 +1,10 @@
+{
+  "name": "freelancehub",
+  "version": "1.0.0",
+  "description": "FreelanceHub - Smart Freelancing Platform",
+  "scripts": {
+    "dev": "cd backend && npm run dev",
+    "start": "cd backend && npm start",
+    "install:backend": "cd backend && npm install"
+  }
+}

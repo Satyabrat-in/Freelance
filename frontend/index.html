@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreelanceHub - Smart Freelancing Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <div class="logo-icon">FH</div>
+                <span>FreelanceHub</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link" onclick="showWelcome()">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content" id="mainContent">
+            <!-- Welcome Screen -->
+            <div id="welcomeScreen">
+                <div class="welcome-screen">
+                    <h1>Welcome to FreelanceHub</h1>
+                    <p>India's Smart Freelancing Platform - Connect with opportunities, secure payments with escrow, AI-powered matching</p>
+                    
+                    <div class="user-type-selection">
+                        <div class="user-type-card" onclick="showAuth('freelancer', 'register')">
+                            <div class="user-type-icon">💼</div>
+                            <h3>I'm a Freelancer</h3>
+                            <p>Find projects, showcase skills, get paid securely</p>
+                        </div>
+                        <div class="user-type-card" onclick="showAuth('employer', 'register')">
+                            <div class="user-type-icon">🏢</div>
+                            <h3>I'm an Employer</h3>
+                            <p>Post projects, find talent, manage work efficiently</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <p style="color: var(--secondary);">Already have an account?</p>
+                        <button class="btn btn-secondary" style="margin-top: 10px;" onclick="showAuth('freelancer', 'login')">Login</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auth Forms -->
+            <div id="authContainer" class="hidden">
+                <div class="auth-container">
+                    <div class="auth-header">
+                        <h2 id="authTitle">Register</h2>
+                        <p id="authSubtitle">Join FreelanceHub today</p>
+                    </div>
+                    <form id="authForm">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="form-group" id="skillsGroup">
+                            <label>Skills (comma separated)</label>
+                            <input type="text" class="form-control" id="skills" placeholder="e.g., Web Development, React, Python">
+                        </div>
+                        <div class="form-group" id="companyGroup" class="hidden">
+                            <label>Company Name</label>
+                            <input type="text" class="form-control" id="company">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                            <span id="authButtonText">Register</span>
+                        </button>
+                        <p style="text-align: center; margin-top: 20px; color: var(--secondary);">
+                            <a href="#" id="authToggle" style="color: var(--accent); text-decoration: none; font-weight: 600;">Already have an account? Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Dashboard -->
+            <div id="dashboard" class="dashboard hidden">
+                <aside class="sidebar">
+                    <ul class="sidebar-menu" id="sidebarMenu">
+                        <!-- Dynamic menu items -->
+                    </ul>
+                </aside>
+                <main class="dashboard-content" id="dashboardContent">
+                    <!-- Dynamic content -->
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
